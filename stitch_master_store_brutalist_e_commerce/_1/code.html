@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ماستر ستور | Master Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffe174",
+                    "on-tertiary-fixed-variant": "#554500",
+                    "on-tertiary-fixed": "#221b00",
+                    "on-surface-variant": "#424655",
+                    "inverse-surface": "#303036",
+                    "surface-dim": "#dcd9e0",
+                    "on-secondary-container": "#fffbff",
+                    "secondary": "#6b38d4",
+                    "primary-container": "#1b6cf2",
+                    "on-primary-fixed-variant": "#00419e",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#c9a810",
+                    "outline": "#727786",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#8455ef",
+                    "outline-variant": "#c2c6d7",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#fdfaff",
+                    "surface": "#fcf8ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#4c3e00",
+                    "secondary-fixed": "#e9ddff",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "background": "#fcf8ff",
+                    "surface-bright": "#fcf8ff",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "on-secondary-fixed": "#23005c",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary": "#0054c8",
+                    "inverse-primary": "#b1c5ff",
+                    "surface-container-low": "#f6f2fa",
+                    "tertiary": "#705d00",
+                    "on-surface": "#1b1b20",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#eae7ee",
+                    "tertiary-fixed-dim": "#e7c433",
+                    "surface-tint": "#0057ce",
+                    "inverse-on-surface": "#f3eff7",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#001946",
+                    "surface-variant": "#e4e1e9",
+                    "on-background": "#1b1b20",
+                    "surface-container-highest": "#e4e1e9",
+                    "primary-fixed": "#dae2ff",
+                    "surface-container": "#f0ecf4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "shadow-offset": "4px",
+                    "border-width": "3px",
+                    "base": "4px",
+                    "xl": "80px",
+                    "sm": "16px",
+                    "xs": "8px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Cairo"],
+                    "headline-lg": ["Cairo"],
+                    "headline-md": ["Cairo"],
+                    "label-bold": ["Cairo"],
+                    "display-xl": ["Cairo"],
+                    "body-md": ["Cairo"],
+                    "headline-lg-mobile": ["Cairo"]
+            },
+            "fontSize": {
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "900"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fcf8ff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-brutal-shadow {
+            box-shadow: 4px 4px 0px #1B1B20;
+        }
+        .neo-brutal-shadow-white {
+            box-shadow: 4px 4px 0px #ffffff;
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1B1B20;
+        }
+        .hover-lift:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #1B1B20;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-xl overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="flex flex-row-reverse justify-between items-center w-full px-md py-xs z-50 bg-surface dark:bg-inverse-surface border-b-[3px] border-on-background shadow-[4px_4px_0px_#1B1B20] sticky top-0">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary font-bold cursor-pointer hover:scale-110 transition-transform" data-icon="menu">menu</span>
+<h1 class="font-headline-md text-headline-md font-black text-on-surface">ماستر ستور</h1>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-surface" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-primary text-on-primary text-[10px] px-1 font-bold border-2 border-on-background">3</span>
+</div>
+<span class="material-symbols-outlined text-on-surface cursor-pointer hover:scale-110 transition-transform" data-icon="person">person</span>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative w-full bg-[#F4D03F] border-b-[3px] border-on-background overflow-hidden py-lg px-md">
+<div class="container mx-auto flex flex-col items-start gap-md relative z-10">
+<div class="bg-on-background text-[#F4D03F] px-xs py-1 inline-block font-label-bold text-label-bold uppercase transform -rotate-1 mb-xs">
+                وصل حديثاً يا وحش!
+            </div>
+<h2 class="font-display-xl text-display-xl max-w-2xl leading-[1] text-on-background">
+                أجدد العروض <br/> <span class="bg-primary text-on-primary px-2">وصلت!</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-background max-w-md">
+                أقوى البراندات بأحسن الأسعار في مصر. متفوتش الفرصة ولم الدور قبل ما يخلص.
+            </p>
+<button class="bg-[#F4D03F] border-[3px] border-on-background px-lg py-md font-headline-md text-headline-md neo-brutal-shadow active-press hover:bg-on-background hover:text-[#F4D03F] transition-all flex items-center gap-xs">
+<span>اشتري دلوقت</span>
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute top-10 left-10 opacity-20 transform -rotate-12 select-none pointer-events-none hidden md:block">
+<span class="material-symbols-outlined text-[200px]" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</section>
+<!-- Category Tabs -->
+<div class="w-full bg-surface border-b-[3px] border-on-background sticky top-[72px] z-40 overflow-x-auto no-scrollbar">
+<div class="flex flex-row-reverse p-xs gap-xs min-w-max">
+<button class="flex items-center gap-xs bg-tertiary-fixed text-on-tertiary-fixed border-[3px] border-on-background py-2 px-md font-label-bold text-label-bold">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+                الكل
+            </button>
+<button class="flex items-center gap-xs bg-surface text-on-surface border-[3px] border-on-background py-2 px-md font-label-bold text-label-bold hover:bg-secondary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="checkroom">checkroom</span>
+                ملابس
+            </button>
+<button class="flex items-center gap-xs bg-surface text-on-surface border-[3px] border-on-background py-2 px-md font-label-bold text-label-bold hover:bg-secondary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+                إلكترونيات
+            </button>
+<button class="flex items-center gap-xs bg-surface text-on-surface border-[3px] border-on-background py-2 px-md font-label-bold text-label-bold hover:bg-secondary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="sports_esports">sports_esports</span>
+                ألعاب
+            </button>
+<button class="flex items-center gap-xs bg-surface text-on-surface border-[3px] border-on-background py-2 px-md font-label-bold text-label-bold hover:bg-secondary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                منزل
+            </button>
+</div>
+</div>
+<!-- Product Grid -->
+<main class="container mx-auto px-md py-lg">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Product Card 1 -->
+<div class="bg-surface border-[3px] border-on-background neo-brutal-shadow flex flex-col group overflow-hidden">
+<div class="aspect-square w-full bg-surface-variant border-b-[3px] border-on-background relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-quality product shot of a futuristic streetwear hoodie featuring neon accents and bold graphic text. The lighting is dramatic and urban, with sharp shadows and a high-contrast aesthetic that matches a neo-brutalist design system. The background is a stark, textured concrete wall in deep charcoal tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiNQQoCPobdmLdBXE-1GEX6GIoazeCMJ1--97DJYcTg9MQYB02ihgAxf2UuFAHG0BMkWypmYW7jGkcKPHfcap8TWTAEIanQ8Gaciwml-ikiwpXLbs0oa-bBbdlHXDCWi898IiZpLv0i4D39gkS1GcbZ1QlAa-Jp6M-MPyBmFTypovg8Mv3NQqT5JmSDs0kwAyFOqLUPv3LHW8OnyDdZLpmgRWmMYr0Lqtc5-LgtZVn1RIqqSLQ6bDRuUrYcfAnR_oJfEm5_TrEK9Sz"/>
+<div class="absolute top-2 right-2 bg-error text-on-error px-2 font-label-bold text-label-bold border-2 border-on-background">
+                        -20%
+                    </div>
+</div>
+<div class="p-sm flex flex-col gap-xs flex-grow">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface">هودي "ماستر" الإصدار الأول</h3>
+<div class="flex items-baseline gap-xs">
+<span class="bg-[#1B6CF2] text-white px-2 font-black text-body-lg">850 ج.م</span>
+<span class="text-on-surface-variant line-through text-label-bold">1050 ج.م</span>
+</div>
+</div>
+<button class="w-full bg-on-background text-surface py-md font-label-bold text-label-bold hover:bg-primary transition-colors flex justify-center items-center gap-xs active:scale-95">
+                    عرض المنتج
+                    <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface border-[3px] border-on-background neo-brutal-shadow flex flex-col group overflow-hidden">
+<div class="aspect-square w-full bg-surface-variant border-b-[3px] border-on-background relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Modern wireless over-ear headphones with a matte black finish and metallic hinges. The product is shot against a vibrant electric blue background, emphasizing its sleek lines and industrial design. The lighting is bright and direct, creating strong highlights that resonate with a bold, high-impact e-commerce brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCZHE4Z1V8yUrCnFzZSLUyjalZmpxp4hpkrNHXtimKlE-eWxS4_A6SkanWS1iICoEmeOeVj80zJXXzfW_4nf-mUQyb7l85ttIjEclsQqy9LF42JsmKkE2yNJ8nbsbhUmld_3fcrGVFG9kgcTi5MWcOLPpXeB3JeyagilYEC4W2dF8XbsD34v17hYsXjyDWW4dEGzd_wSLUHa_iCyZLZUI77LayruBQCo3d-vg94blXrhLmDd3sxCWyxlnKmMCu2oKM03q4eo2qGtnm"/>
+</div>
+<div class="p-sm flex flex-col gap-xs flex-grow">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface">سماعات بلوتوث برو - أسود</h3>
+<div class="flex items-baseline gap-xs">
+<span class="bg-[#1B6CF2] text-white px-2 font-black text-body-lg">2,400 ج.م</span>
+</div>
+</div>
+<button class="w-full bg-on-background text-surface py-md font-label-bold text-label-bold hover:bg-primary transition-colors flex justify-center items-center gap-xs active:scale-95">
+                    عرض المنتج
+                    <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface border-[3px] border-on-background neo-brutal-shadow flex flex-col group overflow-hidden">
+<div class="aspect-square w-full bg-surface-variant border-b-[3px] border-on-background relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A stylish, oversized graphic t-shirt with a bold Arabic typography print in acid yellow and white. The shirt is displayed on a minimalist wire mannequin against a high-contrast background of black and white stripes. The lighting is sharp and graphic, perfectly capturing the raw, architectural aesthetic of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApGSh-AouCcNToxEzRkr8y5CbgGX6zNHgJmZFQJbizepwPu-Pgi3xjuUWZGTxqYjUVj0Ej8SghLth3I-KWZIS4gO5PBsoWSXchwFejs2xAR9jxTEAiiGms3sG47Mg1kt3uadR-aVu5rKPj8UHFWdSrVzBkzKwZ8eQj0egvNU56KpTFOh7_QWsKkQ846PBYJEVXmp52-1_akc12KlUrSfNW3JvidU0lqg1_TvUA7sQnR28TfBIz_PyiHVaFd5-LY6gFLsbY4vbLvt40"/>
+</div>
+<div class="p-sm flex flex-col gap-xs flex-grow">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface">تيشيرت "الشارع" قطن 100%</h3>
+<div class="flex items-baseline gap-xs">
+<span class="bg-[#1B6CF2] text-white px-2 font-black text-body-lg">450 ج.م</span>
+</div>
+</div>
+<button class="w-full bg-on-background text-surface py-md font-label-bold text-label-bold hover:bg-primary transition-colors flex justify-center items-center gap-xs active:scale-95">
+                    عرض المنتج
+                    <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface border-[3px] border-on-background neo-brutal-shadow flex flex-col group overflow-hidden">
+<div class="aspect-square w-full bg-surface-variant border-b-[3px] border-on-background relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist mechanical keyboard with RGB lighting in a deep purple hue. The keyboard features thick, bold keycaps and is placed on a dark workspace with architectural blueprints scattered around. The overall scene is captured with a low-angle lens to emphasize the structural, blueprint-like feel of the neo-brutalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-vr_7DuRoNHAYyqSDXWVUKWb0skRLc2E9V4TarWr4_rcOU0jsMNqSGyJ0LJcvb1jNCOyqI1bpDarxdKDxG-BRKES5XaqLJv04_FOyBjManO4h1XxvpkzliGu126epipFI8YpjytMEBidMoKLpta-Z7NLc1qkGsdr-HSX94rxKI3oNBAGg3XUVu-ObThD-nHodJ6d3lCRE3uYITKt2FiM5GtvIZvNd1ZP_Po1nqufoQek3aCG4Aboa3sdgG4_VZLOnq9EEOCHYD80T"/>
+<div class="absolute top-2 right-2 bg-primary text-on-primary px-2 font-label-bold text-label-bold border-2 border-on-background">
+                        جديد
+                    </div>
+</div>
+<div class="p-sm flex flex-col gap-xs flex-grow">
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface">كيبورد ميكانيكي "جيمر"</h3>
+<div class="flex items-baseline gap-xs">
+<span class="bg-[#1B6CF2] text-white px-2 font-black text-body-lg">1,200 ج.م</span>
+</div>
+</div>
+<button class="w-full bg-on-background text-surface py-md font-label-bold text-label-bold hover:bg-primary transition-colors flex justify-center items-center gap-xs active:scale-95">
+                    عرض المنتج
+                    <span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only Style) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center h-xl bg-surface dark:bg-inverse-surface border-t-[3px] border-on-background">
+<a class="flex flex-col items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed border-x-[3px] border-on-background h-full px-lg" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold text-label-bold">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors h-full px-sm" href="#">
+<span class="material-symbols-outlined" data-icon="package_2">package_2</span>
+<span class="font-label-bold text-label-bold">طلباتي</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors h-full px-sm" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-bold text-label-bold">البحث</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors h-full px-sm" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-bold text-label-bold">حسابي</span>
+</a>
+</nav>
+<!-- Marquee Banner -->
+<div class="w-full bg-on-background text-surface py-2 overflow-hidden whitespace-nowrap border-y-[3px] border-on-background mt-lg">
+<div class="inline-block animate-marquee">
+<span class="mx-4 font-black uppercase text-body-lg">توصيل مجاني لكل مصر • أقوى العروض وصلت • اشتري دلوقت • ماستر ستور هو الأصل • توصيل مجاني لكل مصر • أقوى العروض وصلت • اشتري دلوقت • ماستر ستور هو الأصل •</span>
+</div>
+<div class="inline-block animate-marquee">
+<span class="mx-4 font-black uppercase text-body-lg">توصيل مجاني لكل مصر • أقوى العروض وصلت • اشتري دلوقت • ماستر ستور هو الأصل • توصيل مجاني لكل مصر • أقوى العروض وصلت • اشتري دلوقت • ماستر ستور هو الأصل •</span>
+</div>
+</div>
+<style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'translate(2px, 2px)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = '';
+            });
+        });
+    </script>
+</body></html>

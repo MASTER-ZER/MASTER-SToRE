@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ماستر ستور | لوحة التحكم</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed": "#ffe174",
+                "on-tertiary-fixed-variant": "#554500",
+                "on-tertiary-fixed": "#221b00",
+                "on-surface-variant": "#424655",
+                "inverse-surface": "#303036",
+                "surface-dim": "#dcd9e0",
+                "on-secondary-container": "#fffbff",
+                "secondary": "#6b38d4",
+                "primary-container": "#1b6cf2",
+                "on-primary-fixed-variant": "#00419e",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#c9a810",
+                "outline": "#727786",
+                "on-secondary": "#ffffff",
+                "secondary-container": "#8455ef",
+                "outline-variant": "#c2c6d7",
+                "primary-fixed-dim": "#b1c5ff",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-container": "#fdfaff",
+                "surface": "#fcf8ff",
+                "error": "#ba1a1a",
+                "on-tertiary-container": "#4c3e00",
+                "secondary-fixed": "#e9ddff",
+                "secondary-fixed-dim": "#d0bcff",
+                "background": "#0A0A0F",
+                "surface-bright": "#fcf8ff",
+                "on-secondary-fixed-variant": "#5516be",
+                "on-secondary-fixed": "#23005c",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "primary": "#1B6CF2",
+                "inverse-primary": "#b1c5ff",
+                "surface-container-low": "#f6f2fa",
+                "tertiary": "#F4D03F",
+                "on-surface": "#1b1b20",
+                "on-tertiary": "#ffffff",
+                "surface-container-high": "#eae7ee",
+                "tertiary-fixed-dim": "#e7c433",
+                "surface-tint": "#0057ce",
+                "inverse-on-surface": "#f3eff7",
+                "error-container": "#ffdad6",
+                "on-primary-fixed": "#001946",
+                "surface-variant": "#e4e1e9",
+                "on-background": "#ffffff",
+                "surface-container-highest": "#e4e1e9",
+                "primary-fixed": "#dae2ff",
+                "surface-container": "#f0ecf4"
+            },
+            "spacing": {
+                "md": "24px",
+                "shadow-offset": "4px",
+                "border-width": "3px",
+                "base": "4px",
+                "xl": "80px",
+                "sm": "16px",
+                "xs": "8px",
+                "lg": "48px"
+            },
+            "fontFamily": {
+                "body-lg": ["Cairo"],
+                "headline-lg": ["Cairo"],
+                "headline-md": ["Cairo"],
+                "label-bold": ["Cairo"],
+                "display-xl": ["Cairo"],
+                "body-md": ["Cairo"],
+                "headline-lg-mobile": ["Cairo"]
+            },
+            "fontSize": {
+                "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "900"}],
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "900"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #0A0A0F;
+            color: #ffffff;
+            font-family: 'Cairo', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neo-shadow {
+            box-shadow: 4px 4px 0px #ffffff;
+        }
+        .neo-shadow-primary {
+            box-shadow: 4px 4px 0px #1B6CF2;
+        }
+        .neo-shadow-black {
+            box-shadow: 4px 4px 0px #0A0A0F;
+        }
+        .neo-shadow-acid {
+            box-shadow: 4px 4px 0px #F4D03F;
+        }
+        .active-press:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background overflow-x-hidden">
+<!-- Navigation Drawer (Sidebar) -->
+<aside class="hidden md:flex flex-col fixed right-0 top-0 h-full p-md z-40 bg-background border-l-3 border-on-background shadow-[4px_0px_0px_#ffffff] w-64">
+<div class="mb-lg">
+<h1 class="font-headline-md text-headline-md font-black text-primary">ماستر ستور</h1>
+</div>
+<div class="flex flex-col flex-grow">
+<!-- Header Profile Section -->
+<div class="flex items-center gap-sm mb-lg text-right">
+<div class="w-12 h-12 border-3 border-on-background bg-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A bold neo-brutalist profile avatar of a tech administrator, styled with high contrast yellow and blue tones against a pitch black background. The character has sharp geometric features and is wearing modern streetwear. The lighting is harsh and direct, creating a graphic poster effect." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX4g2Hwz6YhvGtohs36fdXVLef4j8g9ZdCYUbpwm2qbkMEJd3WWsYgqb6_mza2MYMoVYNb2fUDyV6vfcPR2vNDu_jKyh966Z91_ddKV6jSl6FD4GN3N70_WwYbLstksggmvW55gaikql29BNmvJ4Xej9yq-ID8QvnupwaBQlRVGtx6ATZJuCGPNk5r4lx_HqIN4LWVdNdIm5KKseD82q2cVPFnBW3EO1PLoj83snM38v0r_dUXrBpTksZKHDXYojvsi0KtsCiVr4AV"/>
+</div>
+<div>
+<p class="font-body-lg text-body-lg font-bold leading-none">أدمن ماستر</p>
+<p class="text-label-bold text-outline-variant">متصل الآن</p>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="space-y-xs">
+<a class="flex items-center gap-xs p-xs bg-primary-container text-on-primary-container border-3 border-on-background font-bold mb-xs active-press transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-lg text-body-lg">لوحة التحكم</span>
+</a>
+<a class="flex items-center gap-xs p-xs text-on-background hover:bg-on-background hover:text-background border-3 border-transparent hover:border-on-background transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-body-lg text-body-lg">المنتجات</span>
+</a>
+<a class="flex items-center gap-xs p-xs text-on-background hover:bg-on-background hover:text-background border-3 border-transparent hover:border-on-background transition-all" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body-lg text-body-lg">الطلبات</span>
+</a>
+<a class="flex items-center gap-xs p-xs text-on-background hover:bg-on-background hover:text-background border-3 border-transparent hover:border-on-background transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-lg text-body-lg">المستخدمين</span>
+</a>
+<a class="flex items-center gap-xs p-xs text-on-background hover:bg-on-background hover:text-background border-3 border-transparent hover:border-on-background transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-lg text-body-lg">الإعدادات</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Top App Bar -->
+<header class="flex flex-row-reverse justify-between items-center w-full px-md py-xs z-50 fixed top-0 bg-background border-b-3 border-on-background shadow-[4px_4px_0px_#ffffff] md:pr-72">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+<h2 class="font-headline-md text-headline-md font-black text-on-background">لوحة التحكم</h2>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative active-press">
+<span class="material-symbols-outlined text-3xl text-primary">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-tertiary text-background text-[10px] font-bold px-1 border-2 border-on-background">5</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-md md:pr-72 min-h-screen">
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md mb-lg">
+<div class="bg-primary border-3 border-on-background p-md neo-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<p class="font-label-bold text-label-bold text-background uppercase tracking-wider">إجمالي الطلبات</p>
+<h3 class="font-display-xl text-display-xl text-background">١,٢٥٠</h3>
+<div class="flex items-center gap-xs text-background font-bold">
+<span class="material-symbols-outlined">trending_up</span>
+<span>+١٢٪ هذا الشهر</span>
+</div>
+</div>
+<div class="bg-background border-3 border-primary p-md neo-shadow-primary hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<p class="font-label-bold text-label-bold text-primary uppercase tracking-wider">إجمالي المبيعات</p>
+<h3 class="font-display-xl text-display-xl text-on-background">٤٥,٠٠٠ ج.م</h3>
+<div class="flex items-center gap-xs text-primary font-bold">
+<span class="material-symbols-outlined">payments</span>
+<span>صافي الربح</span>
+</div>
+</div>
+<div class="bg-tertiary border-3 border-on-background p-md neo-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<p class="font-label-bold text-label-bold text-background uppercase tracking-wider">المستخدمين النشطين</p>
+<h3 class="font-display-xl text-display-xl text-background">٨٥٠</h3>
+<div class="flex items-center gap-xs text-background font-bold">
+<span class="material-symbols-outlined">person_check</span>
+<span>متصل الآن</span>
+</div>
+</div>
+<div class="bg-secondary border-3 border-on-background p-md neo-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<p class="font-label-bold text-label-bold text-background uppercase tracking-wider">المنتجات المميزة</p>
+<h3 class="font-display-xl text-display-xl text-background">٤٢</h3>
+<div class="flex items-center gap-xs text-background font-bold">
+<span class="material-symbols-outlined">star</span>
+<span>الأكثر مبيعاً</span>
+</div>
+</div>
+</div>
+<!-- Orders Table Section -->
+<section class="mb-lg">
+<div class="flex justify-between items-end mb-md border-b-3 border-on-background pb-xs">
+<h2 class="font-headline-md text-headline-md font-black text-on-background">أحدث الطلبات</h2>
+<button class="bg-background border-3 border-on-background px-md py-1 font-bold text-primary hover:bg-primary hover:text-white transition-all active-press neo-shadow-primary">مشاهدة الكل</button>
+</div>
+<div class="overflow-x-auto border-3 border-on-background bg-background shadow-[8px_8px_0px_#1B6CF2]">
+<table class="w-full text-right border-collapse">
+<thead class="bg-on-background text-background font-black border-b-3 border-on-background">
+<tr>
+<th class="p-md font-label-bold text-label-bold">رقم الطلب</th>
+<th class="p-md font-label-bold text-label-bold">المستخدم</th>
+<th class="p-md font-label-bold text-label-bold">واتساب</th>
+<th class="p-md font-label-bold text-label-bold">إيصال الدفع</th>
+<th class="p-md font-label-bold text-label-bold">الحالة</th>
+<th class="p-md font-label-bold text-label-bold">الإجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y-3 divide-on-background">
+<tr class="hover:bg-primary-container/10 transition-colors">
+<td class="p-md font-bold">#MS-9021</td>
+<td class="p-md">أحمد محمد علي</td>
+<td class="p-md text-primary font-bold">٠١٠١٢٣٤٥٦٧٨</td>
+<td class="p-md">
+<div class="w-16 h-10 border-2 border-on-background bg-white cursor-pointer hover:scale-110 transition-transform">
+<img class="w-full h-full object-cover" data-alt="A detailed digital photo of a printed bank transfer confirmation receipt lying on a dark textured surface. The receipt has visible Arabic text and bank logos, with high contrast shadows. Professional studio lighting highlights the paper texture and sharp black ink on the white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHbNtzwLo2udQOJvvgTlmk5B1TFTRkEzzRUShfKEakJLa8awsLn5DOJqs1ItNcUNZ-VO8oZcYS-ypCgpBFPCSx1W0xjWM7c5Y66ki3tnvXFeKwGfBoTwrN19lpixb9MfxXuIWPB4UmoZd6Ez4TvBzXeMdbCZN6tJKcgVePYHoDFY0hf3kaR4TtH6FShOLvjEGNymScAuVGTSzZqguIj9GeIiLefk7Pk_d_8ocI5idQF9KLCIy_IxaubJRHK4G8x6TO6IMm0IqJbKoJ"/>
+</div>
+</td>
+<td class="p-md">
+<select class="bg-background border-2 border-on-background text-on-background font-bold py-1 px-2 focus:ring-0 focus:border-primary">
+<option>قيد الانتظار</option>
+<option>تم القبول</option>
+<option>مرفوض</option>
+</select>
+</td>
+<td class="p-md">
+<div class="flex gap-xs">
+<button class="bg-primary text-white border-2 border-on-background px-xs py-1 font-bold active-press text-sm">قبول</button>
+<button class="bg-error text-white border-2 border-on-background px-xs py-1 font-bold active-press text-sm">رفض</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary-container/10 transition-colors">
+<td class="p-md font-bold">#MS-9022</td>
+<td class="p-md">سارة إبراهيم</td>
+<td class="p-md text-primary font-bold">٠١٢٩٨٧٦٥٤٣٢</td>
+<td class="p-md">
+<div class="w-16 h-10 border-2 border-on-background bg-white cursor-pointer hover:scale-110 transition-transform">
+<img class="w-full h-full object-cover" data-alt="A macro close-up of a mobile phone screen displaying a successful digital payment transaction in an Arabic banking app. The screen is bright white with vivid blue accents, surrounded by the dark, sleek frame of the phone. High contrast and razor sharp details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8rCRe9LYke-bDu25OGtaYduOWIBtzqQ3_sVwRzFaOmd6LvYBoWG6QiWvJ_2mYkzXrrJwrY79b5TqD6DSledHu2efvoUE8pVT1nG324EJosd61b6btf2UfkbI_hBU6FWwjq_Vu-tH49EaMYrFmKNyGELa9KFRMf6jCefqwe383pCqedySTRmWEjOEheiTAh6FXcK_TeXpD8slMtlzPOF0Wgb1ttp3-gc9zR4JkuGlEPid95mfwEWUPrXOB155KB7LhURiZzietRLB4"/>
+</div>
+</td>
+<td class="p-md">
+<select class="bg-background border-2 border-on-background text-on-background font-bold py-1 px-2 focus:ring-0 focus:border-primary">
+<option>قيد الانتظار</option>
+<option selected="">تم القبول</option>
+<option>مرفوض</option>
+</select>
+</td>
+<td class="p-md">
+<div class="flex gap-xs">
+<button class="bg-primary text-white border-2 border-on-background px-xs py-1 font-bold active-press text-sm">قبول</button>
+<button class="bg-error text-white border-2 border-on-background px-xs py-1 font-bold active-press text-sm">رفض</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Products Grid Section -->
+<section>
+<div class="flex justify-between items-end mb-md border-b-3 border-on-background pb-xs">
+<h2 class="font-headline-md text-headline-md font-black text-on-background">المنتجات الحالية</h2>
+<div class="flex gap-sm">
+<input class="bg-background border-3 border-on-background px-md py-1 focus:ring-0 focus:border-primary w-64 text-on-background" placeholder="ابحث عن منتج..." type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Product Card 1 -->
+<div class="bg-background border-3 border-on-background neo-shadow group hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<div class="h-48 border-b-3 border-on-background overflow-hidden bg-white">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="High-end studio product photography of a modern gaming headset with glowing blue LED accents. The product is shot against a stark black background with dramatic rim lighting. Neo-brutalist aesthetic with clean lines and sharp focus, showcasing every detail of the sleek design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPDKkunc-b03AoU7krDDSLKHZG_wOXbAjKNHExyqRK3oKpjNg9NX4_PwvGAHV4ntuoMSTvJQpssqWkN4CO5Y1joplJYa1fqzxFKIkSYfmjmX7o_1VARIwIiFqsvNsZGa6YMSkV28hrPjlyqnJ0TXAPinTiI0HOFh715qaKiWT1KKJE2scfjWASSPmjdvqdCO9pjpT-EAzMDeicNd4JlKIBZrcysBMJqVm6g96zx0KwllYL_rSZQA95X28rYeUojczq3uVtGaZvlVXT"/>
+</div>
+<div class="p-md">
+<h4 class="font-headline-md text-xl font-bold mb-xs">سماعة جيمنج برو</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary font-black text-2xl">٧٥٠ ج.م</span>
+<span class="bg-tertiary text-background font-bold px-2 border-2 border-on-background">١٥ متوفر</span>
+</div>
+<div class="mt-md flex gap-xs">
+<button class="flex-1 bg-on-background text-background font-bold py-1 active-press">تعديل</button>
+<button class="bg-error text-white border-2 border-on-background px-2 active-press"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-background border-3 border-on-background neo-shadow group hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<div class="h-48 border-b-3 border-on-background overflow-hidden bg-white">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Minimalist product shot of a mechanical keyboard with RGB backlighting, isolated on a dark reflective surface. The lighting features vibrant purple and cyan hues. The composition is geometric and balanced, emphasizing the rugged construction and modern hardware aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkx9nZw8fpeu4eP6wnZu_aPB5dgcjL-qNKlzrAVwBfsCXzsJ0UFvCtV_2c1YBHBjvua9GP5eFhPdIMYcuMKRTsyEnL6WneZoyKJZ-VphW2H-6fZtllW2MqNvrNIA_S28F4JtaapXoworQLKxrXO6YAMcOKNpyrg_v-F5qw5RaLuCaDtq0ahe5egK398_JkdHq7IjkFrhPrEww47CrjLGVb8MyG9w3ta9JRpN0OAG04vR33Tux7Ap2EiMmjVS0H99HkE01jHxEgOyNr"/>
+</div>
+<div class="p-md">
+<h4 class="font-headline-md text-xl font-bold mb-xs">كيبورد ميكانيكي</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary font-black text-2xl">١,٢٠٠ ج.م</span>
+<span class="bg-error text-white font-bold px-2 border-2 border-on-background">نفذ</span>
+</div>
+<div class="mt-md flex gap-xs">
+<button class="flex-1 bg-on-background text-background font-bold py-1 active-press">تعديل</button>
+<button class="bg-error text-white border-2 border-on-background px-2 active-press"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-background border-3 border-on-background neo-shadow group hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all">
+<div class="h-48 border-b-3 border-on-background overflow-hidden bg-white">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="A sleek black smartphone showcased at a 45-degree angle with a dynamic neon graphic on the screen. The background is pitch black with sharp white directional lighting creating intense highlights on the glass and metallic edges. Brutalist graphic design style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMDP0dUiB5nMJhO_p_GFBg51GFGqqhNRpeF39033AJEyVdkJzOtRreya5464575M5PbO8keU6FXi4QeeHI7bUaC0hXfZ5oelZE4OX14NfKTH3eiVkFcOS_Timtevb2c1jLEMY6m34rNfeeyIUJJJySgtozdt1yBs8MD2nNfoQmHLjEGhdm6gVXHfPu7CFjHT_7fF-yszSrGXPoGHAoS0bnUKS9ZaOgnEwuqafKD5dRoWlXOdkc7-JOpgmaRKIetbNYVI-KyoKAGcTk"/>
+</div>
+<div class="p-md">
+<h4 class="font-headline-md text-xl font-bold mb-xs">آيفون ١٥ برو</h4>
+<div class="flex justify-between items-center">
+<span class="text-primary font-black text-2xl">٥٥,٠٠٠ ج.م</span>
+<span class="bg-tertiary text-background font-bold px-2 border-2 border-on-background">٥ متوفر</span>
+</div>
+<div class="mt-md flex gap-xs">
+<button class="flex-1 bg-on-background text-background font-bold py-1 active-press">تعديل</button>
+<button class="bg-error text-white border-2 border-on-background px-2 active-press"><span class="material-symbols-outlined">delete</span></button>
+</div>
+</div>
+</div>
+<!-- Add Placeholder Card -->
+<div class="bg-background border-3 border-dashed border-primary flex flex-col items-center justify-center p-md neo-shadow-primary cursor-pointer hover:bg-primary/5 transition-all">
+<span class="material-symbols-outlined text-6xl text-primary mb-md">add_circle</span>
+<p class="font-headline-md text-xl font-black text-on-background">إضافة منتج جديد</p>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB: إضافة منتج -->
+<button class="fixed bottom-lg right-md md:right-[initial] md:left-md bg-tertiary text-background border-3 border-on-background p-md neo-shadow-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all z-50 flex items-center gap-xs font-black text-xl active-press">
+<span class="material-symbols-outlined font-black">add</span>
+<span>إضافة منتج</span>
+</button>
+<!-- Mobile Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center h-xl bg-background border-t-3 border-on-background">
+<a class="flex flex-col items-center justify-center bg-tertiary text-background border-3 border-on-background py-1 px-4 scale-90" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline-variant" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-bold">المنتجات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline-variant" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-bold">طلباتي</span>
+</a>
+<a class="flex flex-col items-center justify-center text-outline-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">حسابي</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interactions for buttons
+        document.querySelectorAll('button, a').forEach(elem => {
+            elem.addEventListener('mousedown', () => {
+                elem.style.transform = 'translate(4px, 4px)';
+                elem.style.boxShadow = 'none';
+            });
+            elem.addEventListener('mouseup', () => {
+                elem.style.transform = '';
+                elem.style.boxShadow = '';
+            });
+            elem.addEventListener('mouseleave', () => {
+                elem.style.transform = '';
+                elem.style.boxShadow = '';
+            });
+        });
+
+        // Dropdown change styling
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', (e) => {
+                if (e.target.value === 'تم القبول') {
+                    e.target.style.borderColor = '#1B6CF2';
+                    e.target.style.color = '#1B6CF2';
+                } else if (e.target.value === 'مرفوض') {
+                    e.target.style.borderColor = '#ba1a1a';
+                    e.target.style.color = '#ba1a1a';
+                } else {
+                    e.target.style.borderColor = '#ffffff';
+                    e.target.style.color = '#ffffff';
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ماستر ستور - إتمام الطلب</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fcf8ff;
+            color: #1b1b20;
+            overflow-x: hidden;
+        }
+        .neo-brutalist-border {
+            border: 3px solid #1b1b20;
+        }
+        .neo-brutalist-shadow {
+            shadow: 4px 4px 0px #1b1b20;
+        }
+        /* Forcing 0px radius as requested */
+        * {
+            border-radius: 0px !important;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed": "#ffe174",
+                      "on-tertiary-fixed-variant": "#554500",
+                      "on-tertiary-fixed": "#221b00",
+                      "on-surface-variant": "#424655",
+                      "inverse-surface": "#303036",
+                      "surface-dim": "#dcd9e0",
+                      "on-secondary-container": "#fffbff",
+                      "secondary": "#6b38d4",
+                      "primary-container": "#1b6cf2",
+                      "on-primary-fixed-variant": "#00419e",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#c9a810",
+                      "outline": "#727786",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#8455ef",
+                      "outline-variant": "#c2c6d7",
+                      "primary-fixed-dim": "#b1c5ff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#fdfaff",
+                      "surface": "#fcf8ff",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#4c3e00",
+                      "secondary-fixed": "#e9ddff",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "background": "#fcf8ff",
+                      "surface-bright": "#fcf8ff",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "on-secondary-fixed": "#23005c",
+                      "on-primary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary": "#0054c8",
+                      "inverse-primary": "#b1c5ff",
+                      "surface-container-low": "#f6f2fa",
+                      "tertiary": "#705d00",
+                      "on-surface": "#1b1b20",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-high": "#eae7ee",
+                      "tertiary-fixed-dim": "#e7c433",
+                      "surface-tint": "#0057ce",
+                      "inverse-on-surface": "#f3eff7",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#001946",
+                      "surface-variant": "#e4e1e9",
+                      "on-background": "#1b1b20",
+                      "surface-container-highest": "#e4e1e9",
+                      "primary-fixed": "#dae2ff",
+                      "surface-container": "#f0ecf4"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "shadow-offset": "4px",
+                      "border-width": "3px",
+                      "base": "4px",
+                      "xl": "80px",
+                      "sm": "16px",
+                      "xs": "8px",
+                      "lg": "48px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Cairo"],
+                      "headline-lg": ["Cairo"],
+                      "headline-md": ["Cairo"],
+                      "label-bold": ["Cairo"],
+                      "display-xl": ["Cairo"],
+                      "body-md": ["Cairo"],
+                      "headline-lg-mobile": ["Cairo"]
+              },
+              "fontSize": {
+                      "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "900"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                      "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "900"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-xl">
+<!-- Top App Bar (Shared Component Strategy) -->
+<header class="bg-surface border-b-3 border-on-background shadow-[4px_4px_0px_#1B1B20] flex flex-row-reverse justify-between items-center w-full px-md py-xs z-50 sticky top-0">
+<div class="flex items-center gap-xs">
+<h1 class="font-headline-md text-headline-md font-black text-on-surface">ماستر ستور</h1>
+</div>
+<button class="p-xs hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all active:scale-90">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</header>
+<main class="max-w-4xl mx-auto px-md pt-lg">
+<!-- Stepper Container -->
+<div class="flex flex-row-reverse items-center justify-between mb-lg w-full">
+<!-- Step 1: Active -->
+<div class="flex flex-col items-center gap-xs">
+<div class="w-12 h-12 bg-tertiary-fixed text-on-tertiary-fixed border-3 border-on-background flex items-center justify-center font-black text-xl shadow-[4px_4px_0px_#1B1B20]">
+                    ١
+                </div>
+<span class="font-label-bold text-label-bold text-on-surface">بياناتك</span>
+</div>
+<div class="h-1 flex-1 bg-on-background mx-xs mb-6"></div>
+<!-- Step 2: Inactive -->
+<div class="flex flex-col items-center gap-xs opacity-50">
+<div class="w-12 h-12 bg-surface border-3 border-on-background flex items-center justify-center font-black text-xl">
+                    ٢
+                </div>
+<span class="font-label-bold text-label-bold text-on-surface-variant">الدفع</span>
+</div>
+<div class="h-1 flex-1 bg-outline-variant mx-xs mb-6"></div>
+<!-- Step 3: Inactive -->
+<div class="flex flex-col items-center gap-xs opacity-50">
+<div class="w-12 h-12 bg-surface border-3 border-on-background flex items-center justify-center font-black text-xl">
+                    ٣
+                </div>
+<span class="font-label-bold text-label-bold text-on-surface-variant">الإيصال</span>
+</div>
+</div>
+<!-- Checkout Form Canvas -->
+<section class="bg-surface border-3 border-on-background p-md shadow-[8px_8px_0px_#1B1B20] relative overflow-hidden">
+<!-- Decorative Stripe -->
+<div class="absolute top-0 right-0 w-full h-2 bg-primary"></div>
+<div class="mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">الخطوة الأولى</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">من فضلك قم بإدخال بيانات التواصل الخاصة بك لإتمام عملية الشراء.</p>
+</div>
+<form class="space-y-lg">
+<!-- Name Field -->
+<div class="space-y-xs">
+<label class="font-label-bold text-label-bold flex items-center gap-xs" for="full_name">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+                        الاسم الكامل
+                    </label>
+<input class="w-full bg-white border-3 border-on-background p-md font-body-lg text-body-lg focus:outline-none focus:bg-primary-fixed focus:shadow-none transition-all placeholder:opacity-40" id="full_name" placeholder="مثال: محمد أحمد علي" type="text"/>
+</div>
+<!-- WhatsApp Field -->
+<div class="space-y-xs">
+<label class="font-label-bold text-label-bold flex items-center gap-xs" for="whatsapp">
+<span class="material-symbols-outlined text-primary" data-icon="phone_iphone">phone_iphone</span>
+                        رقم الواتساب
+                    </label>
+<div class="relative">
+<input class="w-full bg-white border-3 border-on-background p-md font-body-lg text-body-lg focus:outline-none focus:bg-primary-fixed focus:shadow-none transition-all placeholder:opacity-40 text-right" dir="ltr" id="whatsapp" placeholder="+20 1XX XXX XXXX" type="tel"/>
+<div class="absolute left-3 top-1/2 -translate-y-1/2 flex items-center gap-xs text-on-surface-variant pointer-events-none">
+<span class="font-bold">WhatsApp</span>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="flex justify-end pt-md">
+<button class="group flex items-center gap-md bg-[#F4D03F] border-3 border-on-background px-lg py-md font-black text-2xl shadow-[4px_4px_0px_#1B1B20] hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none transition-all active:scale-95" type="submit">
+                        التالي
+                        <span class="material-symbols-outlined group-hover:translate-x-[-4px] transition-transform" data-icon="arrow_back">arrow_back</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Product Preview (Side Detail/Bottom Detail) -->
+<div class="mt-lg grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="md:col-span-2 space-y-md">
+<div class="bg-secondary-fixed border-3 border-on-background p-sm flex items-center gap-md shadow-[4px_4px_0px_#1B1B20]">
+<div class="w-20 h-20 bg-white border-3 border-on-background shrink-0">
+<img class="w-full h-full object-cover" data-alt="High contrast studio shot of a premium streetwear hoodie with neon details, brutalist photography style, white background, hard shadows, vibrant electric blue and black colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0_7Dis2pTUpDlRiu0P3aAytA79RO4_M61_MFM7CiJoqu744OziXFFWyB8F4p-7l6Igwo7gsBAWodAYi-FwZzBhWgJQd5MeB2zOrm6ybI6YUwo2UznwC6PThyJUJ8H8m6S8Ha2JSpHx7yEJw8edDT2jxl9G2hZp8LcxkKnPUPcTgnvPD3dGY-4NLKiiWjFUPg7sv6gYTw_6qrTjoVQAv3pLRGZWasz3UmGmaBIjGFu1fV8CdBI97_gjVjOZXRTbuFMGgeNARQPSH4i"/>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold">سويت شيرت "ماستر" الإصدار المحدود</h4>
+<p class="font-body-md text-primary font-black text-lg">٩٥٠ جنيه</p>
+</div>
+</div>
+</div>
+<div class="bg-on-surface text-white p-sm border-3 border-on-background shadow-[4px_4px_0px_#1B1B20] flex flex-col justify-center">
+<span class="text-xs opacity-70 mb-1">الإجمالي المستحق</span>
+<span class="text-3xl font-black text-tertiary-fixed">٩٥٠ ج.م</span>
+</div>
+</div>
+</main>
+<!-- Bottom Nav (Shared Component Logic) - Not rendered on checkout pages per UX rules, but including structural footer -->
+<footer class="mt-xl py-lg text-center opacity-30 border-t-3 border-on-background">
+<p class="font-label-bold">ماستر ستور © ٢٠٢٤ - جميع الحقوق محفوظة</p>
+</footer>
+<script>
+        // Simple Interaction logic for Neo-Brutalist "press" feel
+        const nextBtn = document.querySelector('button[type="submit"]');
+        if(nextBtn) {
+            nextBtn.addEventListener('mousedown', () => {
+                nextBtn.style.transform = 'translate(4px, 4px)';
+                nextBtn.style.boxShadow = 'none';
+            });
+            nextBtn.addEventListener('mouseup', () => {
+                nextBtn.style.transform = '';
+                nextBtn.style.boxShadow = '4px 4px 0px #1B1B20';
+            });
+        }
+
+        // Input Focus Visual Effects
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.closest('div').classList.add('translate-x-1', 'translate-y-1');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.closest('div').classList.remove('translate-x-1', 'translate-y-1');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fcf8ff;
+            overflow-x: hidden;
+        }
+        .brutalist-border {
+            border: 3px solid #1b1b20;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px #1b1b20;
+        }
+        .brutalist-shadow-hover:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #1b1b20;
+        }
+        .brutalist-shadow-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1b1b20;
+        }
+        .checkmark-animate {
+            animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ffe174",
+                        "on-tertiary-fixed-variant": "#554500",
+                        "on-tertiary-fixed": "#221b00",
+                        "on-surface-variant": "#424655",
+                        "inverse-surface": "#303036",
+                        "surface-dim": "#dcd9e0",
+                        "on-secondary-container": "#fffbff",
+                        "secondary": "#6b38d4",
+                        "primary-container": "#1b6cf2",
+                        "on-primary-fixed-variant": "#00419e",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#c9a810",
+                        "outline": "#727786",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#8455ef",
+                        "outline-variant": "#c2c6d7",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fdfaff",
+                        "surface": "#fcf8ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#4c3e00",
+                        "secondary-fixed": "#e9ddff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "background": "#fcf8ff",
+                        "surface-bright": "#fcf8ff",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "on-secondary-fixed": "#23005c",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "primary": "#0054c8",
+                        "inverse-primary": "#b1c5ff",
+                        "surface-container-low": "#f6f2fa",
+                        "tertiary": "#705d00",
+                        "on-surface": "#1b1b20",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#eae7ee",
+                        "tertiary-fixed-dim": "#e7c433",
+                        "surface-tint": "#0057ce",
+                        "inverse-on-surface": "#f3eff7",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#001946",
+                        "surface-variant": "#e4e1e9",
+                        "on-background": "#1b1b20",
+                        "surface-container-highest": "#e4e1e9",
+                        "primary-fixed": "#dae2ff",
+                        "surface-container": "#f0ecf4"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "shadow-offset": "4px",
+                        "border-width": "3px",
+                        "base": "4px",
+                        "xl": "80px",
+                        "sm": "16px",
+                        "xs": "8px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Cairo"],
+                        "headline-lg": ["Cairo"],
+                        "headline-md": ["Cairo"],
+                        "label-bold": ["Cairo"],
+                        "display-xl": ["Cairo"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "900"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col items-center justify-center p-md">
+<!-- Top Navigation Anchor (Simulated for Identity) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface flex flex-row-reverse justify-between items-center px-md py-xs border-b-3 border-on-background shadow-[4px_4px_0px_#1B1B20]">
+<h1 class="font-headline-md text-headline-md font-black text-on-surface">ماستر ستور</h1>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-primary text-3xl">shopping_cart</span>
+<span class="material-symbols-outlined text-on-surface text-3xl">menu</span>
+</div>
+</header>
+<!-- Main Success Canvas -->
+<main class="w-full max-w-4xl flex flex-col items-center text-center mt-xl mb-xl">
+<!-- Massive Checkmark -->
+<div class="checkmark-animate mb-lg flex items-center justify-center bg-primary-container brutalist-border brutalist-shadow w-32 h-32 md:w-48 md:h-48">
+<span class="material-symbols-outlined text-on-primary-container text-[80px] md:text-[120px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Success Message -->
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-md text-on-background">
+            تم استلام طلبك بنجاح! ✓
+        </h2>
+<!-- Order Tag (Brutalist Box) -->
+<div class="bg-tertiary-fixed brutalist-border brutalist-shadow px-lg py-sm mb-lg inline-block">
+<p class="font-headline-md text-headline-md text-on-tertiary-fixed m-0">
+                رقم الطلب: <span class="font-black">#12345</span>
+</p>
+</div>
+<!-- Contextual Message -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-lg">
+            شكراً لثقتك في ماستر ستور. طلبك الآن قيد المراجعة وسيتم البدء في تجهيزه خلال الدقائق القادمة. ستصلك رسالة نصية بكل جديد.
+        </p>
+<!-- CTA Button -->
+<a class="bg-on-background text-surface-bright font-headline-md text-headline-md px-xl py-md brutalist-border brutalist-shadow brutalist-shadow-hover brutalist-shadow-active transition-all no-underline inline-block" href="#">
+            الذهاب لصندوق الطلبات
+        </a>
+<!-- Related Item Suggestion (Bento Grid Style Row) -->
+<section class="w-full mt-24">
+<h3 class="font-headline-md text-headline-md text-right mb-sm border-r-8 border-primary pr-sm">قد يعجبك أيضاً</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Promo Card 1 -->
+<div class="bg-surface-container brutalist-border brutalist-shadow flex flex-row-reverse overflow-hidden h-48">
+<div class="w-1/3 h-full brutalist-border border-y-0 border-r-0 border-l-3">
+<img class="w-full h-full object-cover" data-alt="A studio photograph of high-end neon blue running sneakers with thick soles, shot against a stark white background. The lighting is harsh and dramatic, reflecting a neo-brutalist aesthetic with high contrast and sharp shadows. The color palette is strictly electric blue, black, and white to maintain brand consistency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2MeCoBDYztCpx6G_YhmJwpFxeRimNhODnmQJVSzpzUkIFrHAC6gkcZORQ9epdqkhFrFYMVm70bq11TD0zHgbbiGW4m__ppHyPPsYQUYZ6N1zE3ft7LWytu9ExQsvIyofwH4GfNL5Jxw2Y35W6pzZkuF87gJyb734EI8lakfNIQxp6CjEZJWxM5FTlPL4riwD1GjEkVNAFbusbafBI5Rt46btHaKi6IhZqcY8GOibT1M6PF7kXMSW9OxoXpicfY2lyWgQ2S1mKMLvG"/>
+</div>
+<div class="w-2/3 p-md flex flex-col justify-center text-right">
+<span class="text-secondary font-label-bold">وصل حديثاً</span>
+<h4 class="font-headline-md text-headline-md mb-xs">حذاء النيون الأزرق</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">خصم 20% لعملاء اليوم</p>
+</div>
+</div>
+<!-- Promo Card 2 -->
+<div class="bg-primary-fixed brutalist-border brutalist-shadow flex flex-row-reverse overflow-hidden h-48">
+<div class="w-1/3 h-full brutalist-border border-y-0 border-r-0 border-l-3">
+<img class="w-full h-full object-cover" data-alt="A minimalist professional camera lens capturing a wide-angle city view. The image has a heavy grain texture and high-contrast black and white photography style. Strong geometric shapes and architectural lines dominate the composition, echoing the raw and bold personality of the master store brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8TpPh42ZCXaYFQaEZGceNrt4P_17jmP8ma1-LKGW3OHAT7XDbghHPWr2XyiZhDiTNsHMfapdISpHYDJbhAjdrFcdiNc3zsuCFqYNRvtvfwKVloIiZVJPsierZmt_Ng1mNbqEu3FHKKzAVqTJmGpggxNGj9xgUMRttNwZcS_CpmCGW-FIrn612npRXxOnVtOD9lRr7jGsvvDntGEl1UeCuyENnclt-Ylui87ohA9-QYKyNIYiwrrvCtF3yCk9zwhf17FwewiOMy8xy"/>
+</div>
+<div class="w-2/3 p-md flex flex-col justify-center text-right">
+<span class="text-on-primary-fixed-variant font-label-bold">عرض محدود</span>
+<h4 class="font-headline-md text-headline-md mb-xs">عدسة التصوير الاحترافية</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">استمتع بأفضل جودة تصوير</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Nav Bar (Top Level Identity) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center h-xl bg-surface border-t-3 border-on-background">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors px-4 py-1">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-label-bold">الرئيسية</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-tertiary-fixed text-on-tertiary-fixed border-3 border-on-background rounded-none py-1 px-4 scale-105">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">package_2</span>
+<span class="font-label-bold text-label-bold">طلباتي</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors px-4 py-1">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-bold text-label-bold">البحث</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-secondary-fixed-dim transition-colors px-4 py-1">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-bold text-label-bold">حسابي</span>
+</button>
+</nav>
+<!-- Particle/Confetti Effect for Success -->
+<canvas class="fixed inset-0 pointer-events-none z-[60]" id="confetti"></canvas>
+<script>
+        const canvas = document.getElementById('confetti');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+        const colors = ['#1B6CF2', '#F4D03F', '#1B1B20', '#FFFFFF'];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + Math.random() * 100;
+                this.size = Math.random() * 8 + 4;
+                this.speedY = Math.random() * -10 - 5;
+                this.speedX = Math.random() * 6 - 3;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.rotation = Math.random() * 360;
+                this.rotationSpeed = Math.random() * 10 - 5;
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.speedY += 0.2; // Gravity
+                this.rotation += this.rotationSpeed;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                ctx.strokeStyle = '#1B1B20';
+                ctx.lineWidth = 1;
+                ctx.strokeRect(-this.size / 2, -this.size / 2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < 60; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body></html>

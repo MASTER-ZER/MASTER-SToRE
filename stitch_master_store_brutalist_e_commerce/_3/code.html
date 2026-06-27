@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تسجيل جديد - ماستر ستور</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#ffe174",
+                    "on-tertiary-fixed-variant": "#554500",
+                    "on-tertiary-fixed": "#221b00",
+                    "on-surface-variant": "#424655",
+                    "inverse-surface": "#303036",
+                    "surface-dim": "#dcd9e0",
+                    "on-secondary-container": "#fffbff",
+                    "secondary": "#6b38d4",
+                    "primary-container": "#1b6cf2",
+                    "on-primary-fixed-variant": "#00419e",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#c9a810",
+                    "outline": "#727786",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#8455ef",
+                    "outline-variant": "#c2c6d7",
+                    "primary-fixed-dim": "#b1c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#fdfaff",
+                    "surface": "#fcf8ff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#4c3e00",
+                    "secondary-fixed": "#e9ddff",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "background": "#fcf8ff",
+                    "surface-bright": "#fcf8ff",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "on-secondary-fixed": "#23005c",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary": "#0054c8",
+                    "inverse-primary": "#b1c5ff",
+                    "surface-container-low": "#f6f2fa",
+                    "tertiary": "#705d00",
+                    "on-surface": "#1b1b20",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#eae7ee",
+                    "tertiary-fixed-dim": "#e7c433",
+                    "surface-tint": "#0057ce",
+                    "inverse-on-surface": "#f3eff7",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#001946",
+                    "surface-variant": "#e4e1e9",
+                    "on-background": "#1b1b20",
+                    "surface-container-highest": "#e4e1e9",
+                    "primary-fixed": "#dae2ff",
+                    "surface-container": "#f0ecf4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "shadow-offset": "4px",
+                    "border-width": "3px",
+                    "base": "4px",
+                    "xl": "80px",
+                    "sm": "16px",
+                    "xs": "8px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Cairo"],
+                    "headline-lg": ["Cairo"],
+                    "headline-md": ["Cairo"],
+                    "label-bold": ["Cairo"],
+                    "display-xl": ["Cairo"],
+                    "body-md": ["Cairo"],
+                    "headline-lg-mobile": ["Cairo"]
+            },
+            "fontSize": {
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "900"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .neo-brutal-shadow {
+            box-shadow: 4px 4px 0px #1B1B20;
+        }
+        .neo-brutal-shadow-active:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px #1B1B20;
+        }
+        .neo-brutal-border {
+            border: 3px solid #1B1B20;
+        }
+        .neo-input-focus:focus {
+            background-color: #f6f2fa;
+            border-width: 5px;
+            outline: none;
+        }
+        body {
+            background-image: radial-gradient(#1b1b20 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-color: #fcf8ff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex items-center justify-center p-md">
+<!-- Auth Container -->
+<main class="w-full max-w-[500px] z-10">
+<!-- Brand Header (Neo-Brutalist Banner) -->
+<div class="bg-primary neo-brutal-border neo-brutal-shadow mb-sm p-sm text-center">
+<h1 class="font-display-xl text-headline-lg-mobile md:text-headline-lg text-on-primary-container tracking-tighter uppercase">
+                ماستر ستور
+            </h1>
+</div>
+<!-- Registration Card -->
+<div class="bg-surface neo-brutal-border neo-brutal-shadow p-md md:p-lg">
+<header class="mb-lg border-b-3 border-on-background pb-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">إنشاء حساب جديد</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">انضم لأكبر متجر في مصر دلوقت</p>
+</header>
+<form action="#" class="space-y-md" onsubmit="return false;">
+<!-- Full Name -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-bold text-label-bold text-on-surface">الاسم بالكامل</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">person</span>
+<input class="w-full h-[60px] pr-12 neo-brutal-border neo-input-focus font-body-md text-body-md transition-all" placeholder="اسمك الثنائي أو الثلاثي" type="text"/>
+</div>
+</div>
+<!-- WhatsApp Number -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-bold text-label-bold text-on-surface">رقم الواتساب</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">chat</span>
+<input class="w-full h-[60px] pr-12 text-right neo-brutal-border neo-input-focus font-body-md text-body-md transition-all" dir="ltr" placeholder="01xxxxxxxxx" type="tel"/>
+</div>
+</div>
+<!-- Email -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-bold text-label-bold text-on-surface">الإيميل</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">mail</span>
+<input class="w-full h-[60px] pr-12 text-right neo-brutal-border neo-input-focus font-body-md text-body-md transition-all" dir="ltr" placeholder="example@master.store" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-bold text-label-bold text-on-surface">الباسورد</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">lock</span>
+<input class="w-full h-[60px] pr-12 neo-brutal-border neo-input-focus font-body-md text-body-md transition-all" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="pt-sm">
+<button class="w-full h-[70px] bg-[#F4D03F] text-on-tertiary-fixed font-headline-md text-headline-md neo-brutal-border neo-brutal-shadow neo-brutal-shadow-active transition-all flex items-center justify-center gap-sm" type="submit">
+<span>إنشاء الحساب</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_back</span>
+</button>
+</div>
+</form>
+<!-- Link Back -->
+<footer class="mt-lg text-center">
+<a class="font-label-bold text-label-bold text-primary hover:underline flex items-center justify-center gap-xs" href="#">
+<span>رجوع لتسجيل الدخول</span>
+<span class="material-symbols-outlined text-sm">login</span>
+</a>
+</footer>
+</div>
+<!-- Atmospheric Elements -->
+<div class="mt-md grid grid-cols-2 gap-sm opacity-50">
+<div class="h-4 bg-secondary neo-brutal-border"></div>
+<div class="h-4 bg-tertiary-container neo-brutal-border"></div>
+</div>
+</main>
+<!-- Side Graphic for Desktop -->
+<div class="hidden lg:block fixed left-12 bottom-12 w-64 h-64 z-0">
+<div class="w-full h-full neo-brutal-border bg-white rotate-6 p-4">
+<div class="w-full h-full bg-cover bg-center neo-brutal-border" data-alt="A high-contrast neo-brutalist digital illustration of a stack of vibrant shipping boxes and gadgets. The scene is lit with sharp, hard shadows and uses a bold color palette of electric blue, acid yellow, and deep black. The overall style is geometric and raw, conveying a modern e-commerce energy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCy9u0HlL-KpMlu5cnZMd2Vq6dQ2glVpAESwU7tLFFyDjbFrgfjOKG3kCqeyRd9o2FFiR4EXPBhboTC4Wn274eL4JYkoKR6wm8VxV1ieFzOjFU9TbEQjuqUiKlSxQRkrc3iZev_LKFKdjctMMJfvo2ojUrCfx4Qbw8PYhBaCp1tJgysEpVCDfVrfw9qs2w5F_JdPcNzFkwt_BSaczQ69tCPl-yfQtE98Y5Oi2NMxdEd-whf8D2ODmSIELgyuIJ-3kZm7nim7CorxvO8')"></div>
+</div>
+</div>
+<script>
+        // Simple micro-interaction for the button
+        const btn = document.querySelector('button');
+        btn.addEventListener('mousedown', () => {
+            btn.style.transform = 'translate(4px, 4px)';
+            btn.style.boxShadow = 'none';
+        });
+        btn.addEventListener('mouseup', () => {
+            btn.style.transform = 'translate(0px, 0px)';
+            btn.style.boxShadow = '4px 4px 0px #1B1B20';
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0px, 0px)';
+            btn.style.boxShadow = '4px 4px 0px #1B1B20';
+        });
+    </script>
+</body></html>
